@@ -20,7 +20,7 @@ What things you need to install the software and how to install them
 
 ### Installing
 
-Because we are running the package in bitbucket as private project you need to have a SSH key.
+Because this is an early start you need to add github to your composer.json
 
 To add IQ-swagger to your laravel project you need to add the following lines to the composer.json file:
 ```php
@@ -37,16 +37,17 @@ Dennis1804\IqSwagger\SwaggerServiceProvider::class,
 ```
 Next to that it's recommended to add the JWT-auth package. this will provide an auth-token based login for your API.
 It will also work with the swagger documentation which requires a token to make most api-calls.
+alternatively you can use bearer tokens but this has not been tested.
 
-now that the code is ready, you can add the javascripts to your public folder with: `php artisan vendor:publish --provider=SwaggerServiceProvider`
+now that the code is ready, you can add the javascripts to your public folder with: `php artisan vendor:publish`
 
 ## php artisan iq:swagger
 
 The package also comes with an artisan command which has to be executed every time you have edited a docblock.
-this command will read all the docblocks and format them to a swagger.json file.
+this command will read all the docblocks and format them to a swagger.yaml / json file.
 all you have to do is execute the following command:
 `php artisan iq:swagger`
-This will read all the routes which have `/api` in it.
+This will read all the routes which have `api` in it.
 
 
 ## The docblock
@@ -70,9 +71,6 @@ We will go from top to bottom with the docblock and explain what the package doe
 
 ###function
 `function authenticate` just declares that the name of the function is "authenticate".
-
-
- 
 
 ### Consumes
 ```
