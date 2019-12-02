@@ -5,7 +5,11 @@ Route::get( '/api', [
     ]);
 
 
-Route::get( '/swagger', [
+
+Route::group(['middleware' => 'cors'], function ($router) {
+	Route::get( '/swagger', [
         'as' => 'iq-swagger.swagger',
         'uses' => 'Dennis1804\IqSwagger\ApiDocController@getSwagger'
     ]);
+
+});

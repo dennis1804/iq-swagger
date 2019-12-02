@@ -147,8 +147,8 @@ class ApiDocMaker extends Command
             'name' => $line[2],
             'in' => $in,
             'description' => $line[4],
-            'type' => $line[1],
-            'required' => $line[3]
+            'type' => (empty($line[1])) ? 'string' : $line[1],
+            'required' => (empty($line[3])) ? 'false' : $line[3]
         ];
     }
 
@@ -196,7 +196,7 @@ class ApiDocMaker extends Command
 
         foreach($docLines as $line) {
             $description = "";
-            $line = explode('*', $line)[1];
+            $line = array_get(explode('*', $line), 1, 'no-doclines defined');
 
             if(strlen($line) > 5) { 
                 if(strrpos($line, '@')) {
@@ -223,10 +223,16 @@ class ApiDocMaker extends Command
             $swaggerData = [];
 
             $action = explode('@', $route['action']);
-            $class = $action[0];
-            $function = $action[1];
 
-            if($class !== 'Dennis1804\IqSwagger\ApiDocController') {
+
+
+
+                $class = array_get($action, 0, 'undefined');
+                $function = array_get($action, 1, "undefined");
+           
+           
+
+            if($class !== 'Dennis1804\IqSwagger\ApiDocController' && $class !== 'undefined' && $function !== "undefined") {
 
             // get class
                 $reflector = new \ReflectionClass($class);
@@ -265,9 +271,9 @@ class ApiDocMaker extends Command
 
         $collection = collect($docs);
 
-        file_put_contents(public_path('swagger.json'), view('swagger::swagger', ['collection' => $collection->groupBy('uri')])->render());
+        file_put_contents(public_path('swagger.yaml'), view('swagger::swagger', ['collection' => $collection->groupBy('uri')])->render());
 
-        $this->line('generated /public/swagger.json file');
+        $this->line('generated /public/swagger.yaml file');
     }
 
     /**
@@ -293,7 +299,8 @@ class ApiDocMaker extends Command
 
     protected function filterRoute(array $route)
     {
-        if ( !Str::contains($route['name'], 'api') ||
+        // dd($route);
+        if ( !Str::contains($route['uri'], 'api') ||
              $this->option('path') && ! Str::contains($route['uri'], $this->option('path')) ||
              $this->option('method') && ! Str::contains($route['method'], $this->option('method'))) {
             return;

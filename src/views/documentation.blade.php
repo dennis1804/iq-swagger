@@ -27,6 +27,7 @@
                 dom_id: "swagger-ui-container",
                 supportedSubmitMethods: ['get', 'post'],
                 onFailure: function (data) {
+                    console.log(data);
                     log("Unable to Load Swag");
                 },
                 docExpansion: "none",
