@@ -26,15 +26,15 @@ Because we are running the package in bitbucket as private project you need to h
 To add IQ-swagger to your laravel project you need to add the following lines to the composer.json file:
 ```php
     "require": {
-        "reindereu/iq-swagger": "dev-default",
+        "Dennis1804/iq-swagger": "dev-default",
     },
-"repositories": [ { "type": "vcs", "url": "ssh://hg@bitbucket.org/reindereu/iq-swagger" } ]
+"repositories": [ { "type": "vcs", "url": "ssh://hg@bitbucket.org/Dennis1804/iq-swagger" } ]
 
 ```
 Next you want to run the `composer update` command to download the project into the vendor folder.
 Then you need to open your `config/app.php` file and add the Serviceprovider for the package.
 ```
-ReinderEU\IqSwagger\SwaggerServiceProvider::class,
+Dennis1804\IqSwagger\SwaggerServiceProvider::class,
 ```
 Next to that it's recommended to add the JWT-auth package. this will provide an auth-token based login for your API.
 It will also work with the swagger documentation which requires a token to make most api-calls.

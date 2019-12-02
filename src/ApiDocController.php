@@ -1,5 +1,5 @@
 <?php
-namespace ReinderEU\IqSwagger;
+namespace Dennis1804\IqSwagger;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

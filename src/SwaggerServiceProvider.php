@@ -1,6 +1,6 @@
 <?php
 
-namespace ReinderEU\IqSwagger;
+namespace Dennis1804\IqSwagger;
 
 use Illuminate\Support\ServiceProvider;
 

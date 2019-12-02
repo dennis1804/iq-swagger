@@ -1,6 +1,6 @@
 <?php
 
-namespace ReinderEU\IqSwagger;
+namespace Dennis1804\IqSwagger;
 
 use Closure;
 use Illuminate\Support\Arr;
@@ -226,7 +226,7 @@ class ApiDocMaker extends Command
             $class = $action[0];
             $function = $action[1];
 
-            if($class !== 'ReinderEU\IqSwagger\ApiDocController') {
+            if($class !== 'Dennis1804\IqSwagger\ApiDocController') {
 
             // get class
                 $reflector = new \ReflectionClass($class);
