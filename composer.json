@@ -1,0 +1,16 @@
+{
+    "name": "Dennis1804/iq-swagger",
+    "description": "Generates a swagger.json file with all your documented api/ routes",
+    "license": "MIT",
+    "minimum-stability": "dev",
+
+	"require": {
+	    "php": ">=5.6.0",
+	    "illuminate/support": "~5.4"
+	  },
+	  "autoload": {
+	    "psr-4": {
+	      "Dennis1804\\IqSwagger\\": "src/"
+		}
+	  }
+}
