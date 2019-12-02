@@ -16,7 +16,6 @@ What things you need to install the software and how to install them
 ```
 - laravel project (5.5 >)
 - PHP 7 >
-- bitbucket SSH access to the project.
 ```
 
 ### Installing
@@ -28,7 +27,7 @@ To add IQ-swagger to your laravel project you need to add the following lines to
     "require": {
         "Dennis1804/iq-swagger": "dev-default",
     },
-"repositories": [ { "type": "vcs", "url": "ssh://hg@bitbucket.org/Dennis1804/iq-swagger" } ]
+"repositories": [ { "type": "vcs", "url": "https://github.com/dennis1804/iq-swagger" } ]
 
 ```
 Next you want to run the `composer update` command to download the project into the vendor folder.
