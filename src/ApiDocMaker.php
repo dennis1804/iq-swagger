@@ -143,13 +143,18 @@ class ApiDocMaker extends Command
     
     protected function parseParam(array $line, $in = 'formData') {
 
-        return [
+
+        $required = explode(" ", $line[3]);
+        $required = end($required);
+        $data = [
             'name' => $line[2],
             'in' => $in,
-            'description' => $line[4],
+            'description' => chop($line[3], $required),
             'type' => (empty($line[1])) ? 'string' : $line[1],
-            'required' => (empty($line[3])) ? 'false' : $line[3]
+            'required' => (empty($required)) ? 'false' : $required
         ];
+
+        return $data;
     }
 
 
@@ -159,7 +164,7 @@ class ApiDocMaker extends Command
 
         $line = explode('@', $line)[1];
 
-        $lineparams = explode(' ',$line, 5);
+        $lineparams = explode(' ',$line, 4);
 
         switch($lineparams[0]) {
             case 'param':

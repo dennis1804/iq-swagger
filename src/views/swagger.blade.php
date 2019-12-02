@@ -23,7 +23,7 @@ schemes:
 paths:
 
 @foreach($collection as $route => $methods)
-  {{$route}}:
+  /{{$route}}:
   @foreach($methods as $method)
   {{strtolower($method['method'])}}:
       tags:
