@@ -60,8 +60,8 @@ because swagger needs to know if the input is required or not you need to add a 
      *
      * @consumes multipart/form-data
      *
-     * @param string email true The email-address of the user
-     * @param string password true the users password
+     * @param string email The email-address of the user true
+     * @param string password the users password true
      * 
      * @return json
      * @author Dennis
@@ -86,22 +86,23 @@ The following types are available.
 "application/x-www-form-urlencoded"     (GET)
 ```
 
-###params
+### params
 in the `@param` attribute you can identify what content you expect from the `@consumes`
 *like the example, the method was post; and it requires an string: `email` and a string: `password`.*
 ```
- * @param string email true The email-address of the user
- * @param string password true the users password
+ * @param string email The email-address of the user true
+ * @param string password the users password true
 ```
 The param has a couple of attributes;
 ```
 Identifier                      @param
 Type                            string
 Name                            email
-Required                        true
 Description                     The email-address of the user
+Required                        true
+
 ```
-####Type
+#### Type
 There are multiple types available to choose from;
 The most important ones:
 ```
@@ -115,15 +116,15 @@ The most important ones:
     file
 
 ```
-####Name
+#### Name
 This is just a name you can give the input-field.
-####Required
+#### Required
 Boolean, true or false. indicates if the element is required or not.
-####Description
+#### Description
 A short-description of the element.
 
 
-###url
+### url
 This is a customized `@param`, it uses the same attributes the only difference is that it identifies the url - parameters.
 if we have a route like this:
 ```php   
@@ -136,7 +137,7 @@ you can add a url param:
 now can fill the url-param in the swagger-page.
 
 
-###return
+### return
 identifies what type of content you return.
 can either be one of these;
 ```
@@ -144,10 +145,10 @@ can either be one of these;
 "application/json"
 
 ```
-###author
+### author
 your name.
 
 
-##accessing the documentation:
+## accessing the documentation:
 you can just go to : `http://your-domain.dev/api` after you executed the `php artisan iq:swagger` command.
 
