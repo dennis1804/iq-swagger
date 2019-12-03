@@ -275,7 +275,6 @@ class ApiDocMaker extends Command
         }
 
         $collection = collect($docs);
-
         file_put_contents(public_path('swagger.yaml'), view('swagger::swagger', ['collection' => $collection->groupBy('uri')])->render());
 
         $this->line('generated /public/swagger.yaml file');

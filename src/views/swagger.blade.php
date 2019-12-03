@@ -24,8 +24,8 @@ paths:
 
 @foreach($collection as $route => $methods)
   /{{$route}}:
-  @foreach($methods as $method)
-  {{strtolower($method['method'])}}:
+@foreach($methods as $method)
+    {{strtolower($method['method'])}}:
       tags:
        - "{{strtolower($method['prefix'])}}"
       consumes:
