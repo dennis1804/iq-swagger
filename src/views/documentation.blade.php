@@ -25,13 +25,14 @@
             window.swaggerUi = new SwaggerUi({
                 url: "{{route('iq-swagger.swagger')}}",
                 dom_id: "swagger-ui-container",
-                supportedSubmitMethods: ['get', 'post'],
+                supportedSubmitMethods: ['get', 'post', 'delete', 'update'],
                 onFailure: function (data) {
                     console.log(data);
                     log("Unable to Load Swag");
                 },
                 docExpansion: "none",
                 jsonEditor: false,
+          
                 apisSorter : "alpha",
                 validatorUrl: null,
                 onComplete: function () {
@@ -100,8 +101,8 @@
 <body class="swagger-section">
 <script type="text/template" id="jwt-input-tpl">
     <div class="align-right">
-        <strong>JWT Token:</strong>
-        <input type="text" id="jwt-input" placeholder="JWT token">
+        <strong>Authorization bearer:</strong>
+        <input type="text" id="jwt-input" placeholder="token">
         <input type="button" id="jwt-set-token" value="Set token">
     </div>
 </script>
