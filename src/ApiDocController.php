@@ -28,6 +28,7 @@ class ApiDocController extends Controller {
     public function getSwagger()
     {
 
-    	return \yaml_parse(file_get_contents(public_path('swagger.yaml')));
+        return file_get_contents(public_path('swagger.json'));
+    	// return \yaml_parse(file_get_contents(public_path('swagger.yaml')));
     }
 }
