@@ -1,5 +1,5 @@
 {
-    "name": "Dennis1804/iq-swagger",
+    "name": "dennis1804/iq-swagger",
     "description": "Generates a swagger.json file with all your documented api/ routes",
     "license": "MIT",
     "minimum-stability": "dev",
