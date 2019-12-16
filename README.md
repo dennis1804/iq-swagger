@@ -4,6 +4,7 @@
 # IQ-swagger
 
 IQ-swagger is a package which converts docblocks into a user-friendly visual api-view (swagger)
+[![Latest Stable Version](https://poser.pugx.org/dennis1804/iq-swagger/v/stable)](https://packagist.org/packages/dennis1804/iq-swagger) [![Total Downloads](https://poser.pugx.org/dennis1804/iq-swagger/downloads)](https://packagist.org/packages/dennis1804/iq-swagger) [![Latest Unstable Version](https://poser.pugx.org/dennis1804/iq-swagger/v/unstable)](https://packagist.org/packages/dennis1804/iq-swagger) [![License](https://poser.pugx.org/dennis1804/iq-swagger/license)](https://packagist.org/packages/dennis1804/iq-swagger)
 
 ## Getting Started
 
