@@ -43,7 +43,30 @@ paths:
 @endforeach
       responses:
         200:
-          description: "OK"
+          description: "Succesful operation"
+          content:
+            application/json:
+              schema:
+                type: object
+        401:
+          description: "Unauthorized"
+        404:
+          description: "Model not found"
+        5xx:
+          description: "Server error"
+        422:
+          description: "Unprocessable entry (validation error)"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: is the process succesfull (probably not.)
+                  msg:
+                    type: string
+                    description: the reason why the process is unsuccesful
 @endforeach
 
 @endforeach

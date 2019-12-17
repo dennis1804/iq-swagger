@@ -25,7 +25,7 @@
             window.swaggerUi = new SwaggerUi({
                 url: "{{route('iq-swagger.swagger')}}",
                 dom_id: "swagger-ui-container",
-                supportedSubmitMethods: ['get', 'post', 'delete', 'update'],
+                supportedSubmitMethods: ['get', 'post', 'delete', 'update', 'put'],
                 onFailure: function (data) {
                     console.log(data);
                     log("Unable to Load Swag");
